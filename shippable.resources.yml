@@ -116,6 +116,14 @@ resources:
         - "127.0.8.1"
       dnsSearch:
         - "127.8.0.1"
+      logConfig:
+        type: "json-file"
+        options:
+          max-size: 50m
+      privileged: true
+      entryPoint:
+        - '/bin/sh'
+        - './entrypoint2.sh'
 
   - name: plv2-dopts1
     type: dockerOptions
