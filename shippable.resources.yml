@@ -70,6 +70,14 @@ resources:
     seed:
       versionName: "nodeenv"
       
+  - name: plv2-imageentrypoint
+    type: image
+    integration: cock1-hub
+    pointer:
+      sourceName: "scriptnull/debian"
+    seed:
+      versionName: "entrypoint"
+      
   - name: plv2-imgdoesntexist
     type: image
     integration: cock1-hub
@@ -116,6 +124,29 @@ resources:
         - "127.0.8.1"
       dnsSearch:
         - "127.8.0.1"
+      logConfig:
+        type: "json-file"
+        options:
+          max-size: 50m
+      privileged: true
+      entryPoint:
+        - '/bin/sh'
+        - './entrypoint2.sh'
+        
+  - name: plv2tp-dopts8
+    type: dockerOptions
+    version:
+      memory: 128
+     # user: "driftking"
+     # workingDir: "/makemeworking"
+      publishAllPorts: true
+      #cmd:
+       # - "node"
+        #- "job.js"
+      #dnsServers:
+       # - "127.0.8.1"
+      #dnsSearch:
+       # - "127.8.0.1"
       logConfig:
         type: "json-file"
         options:
