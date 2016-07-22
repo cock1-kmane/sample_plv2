@@ -132,6 +132,9 @@ resources:
       entryPoint:
         - '/bin/sh'
         - './entrypoint2.sh'
+      labels:
+        labelone: valueOne
+        labeltwo: valueTwo
         
   - name: plv2tp-dopts8
     type: dockerOptions
