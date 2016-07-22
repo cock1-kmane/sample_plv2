@@ -129,9 +129,9 @@ resources:
         options:
           max-size: 50m
       privileged: true
-      entryPoint:
-        - '/bin/sh'
-        - './entrypoint2.sh'
+      #entryPoint:
+       # - '/bin/sh'
+       # - './entrypoint2.sh'
       labels:
         labelone: valueOne
         labeltwo: valueTwo
