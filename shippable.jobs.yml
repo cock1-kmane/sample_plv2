@@ -220,9 +220,9 @@ jobs:
   - name: plv2tri-manifest14
     type: manifest
     steps:
-      - IN: plv2-imagewithopts
-      - IN: triggerv2sp9
-      - IN: plv2tp-dopts7
+      - IN: plv2-imageentrypoint
+      - IN: triggerv2sp14
+      - IN: plv2tp-dopts8
       
   - name: plv2-tripubdeploybg
     type: tripubDeploy
