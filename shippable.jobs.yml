@@ -106,6 +106,14 @@ jobs:
       - IN: plv2ecs-dopts6
       - TASK: managed
       
+  - name: plv2ecs-manifest13
+    type: manifest
+    steps:
+      - IN: plv2-image2
+      - IN: triggerv2sp8
+      - IN: plv2ecs-dopts6
+      - TASK: managed
+      
   - name: release-version1
     type: release
     steps:
