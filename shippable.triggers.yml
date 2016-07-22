@@ -47,4 +47,4 @@ triggers:
    - name: triggerv2sp14
      type: trigger
      version:
-       counter: 2
+       counter: 1
