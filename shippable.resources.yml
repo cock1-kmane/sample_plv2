@@ -72,6 +72,14 @@ resources:
     seed:
       versionName: "driftking"
       
+  - name: plv2-image5redis
+    type: image
+    integration: cock1-hub
+    pointer:
+      sourceName: "redis"
+    seed:
+      versionName: "latest"
+      
   - name: plv2tp-dopts1
     type: dockerOptions
     version:
