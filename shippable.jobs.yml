@@ -63,6 +63,13 @@ jobs:
       - IN: plv2-image5redis
       - IN: triggerv2sp8
       
+  - name: plv2-manifest9volumeforms
+    type: manifest
+    steps:
+      - IN: plv2-image1
+      - IN: plv2tp-dopts5
+      - IN: triggerv2sp9    
+      
   - name: release-version1
     type: release
     steps:
@@ -143,3 +150,9 @@ jobs:
     steps:
       - IN: plv2-manifest8redis
       - IN: tripub-cluster      
+      
+  - name: plv2redis-tpdeploy5
+    type: tripubDeploy
+    steps:
+      - IN: plv2-manifest8volumeforms
+      - IN: tripub-cluster  
