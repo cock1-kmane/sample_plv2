@@ -156,6 +156,13 @@ resources:
         - "s3"
         - "s4"
         - "s5"
+        
+  - name: plv2tp-dopts5
+    type: dockerOptions
+    version:
+        volumesFrom:
+          - "plv2-manifest5entrypointdopt_0_0_03c3505a-a99b-46a9-8fd6-7f4d2516abb5"
+          - "basedataContainer:ro"
       
   - name: plv2ecs-dopts5
     type: dockerOptions
