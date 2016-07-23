@@ -146,6 +146,16 @@ resources:
       labels:
         labelone: valueOne
         labeltwo: valueTwo
+        
+  - name: plv2tp-dopts4
+    type: dockerOptions
+    version:
+      volumes:
+        - "s1"
+        - "s2"
+        - "s3"
+        - "s4"
+        - "s5"
       
   - name: plv2ecs-dopts5
     type: dockerOptions
