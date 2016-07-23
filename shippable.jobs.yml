@@ -57,11 +57,11 @@ jobs:
       - IN: plv2-params2
       - IN: triggerv2sp7
       
-  - name: release-version2
+  - name: release-version1
     type: release
     steps:
       - IN: plv2-version
-      - IN: plv2-manifest1
+      - IN: plv2multiimg-mf1
       - IN: triggerv2sp2
       - TASK: managed
         bump: alpha
