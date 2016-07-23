@@ -154,5 +154,5 @@ jobs:
   - name: plv2redis-tpdeploy5
     type: tripubDeploy
     steps:
-      - IN: plv2-manifest8volumeforms
+      - IN: plv2-manifest9volumeforms
       - IN: tripub-cluster  
