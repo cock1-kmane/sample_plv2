@@ -5,11 +5,11 @@ resources:
     pointer:
       sourceName : "nothing" #we can anything because it is mandatory but ddc doesnot have clusters
 
-  #- name: cluster-dcl
-   # type: cluster
-    #integration: scriptnull-dcl
-    #pointer:
-     #sourceName : "cluster-dcl"
+  - name: dcl-cluster
+    type: cluster
+    integration: varshaarun-dcl
+    pointer:
+     sourceName : "cluster-dcl"
 
   - name: ecs-cluster
     type: cluster
@@ -24,22 +24,8 @@ resources:
     pointer:
       sourceName: "small-cluster" #name of the cluster we are deploying.
       region: "us-east1-d"
-
-  - name: tripub-cluster1
-    type: cluster
-    integration: varshaarun-tripub
-    pointer:
-      sourceName: "default" # we can give anything it deploy instances based on region not by cluster name
-      region: "us-east-1"
       
-  - name: tripub-cluster2
-    type: cluster
-    integration: varshaarun-tripub
-    pointer:
-      sourceName: "default" # we can give anything it deploy instances based on region not by cluster name
-      region: "us-east-3"
-      
-  - name: tripub-cluster3
+  - name: tripub-cluster
     type: cluster
     integration: varshaarun-tripub
     pointer:
@@ -62,7 +48,7 @@ resources:
     seed:
       versionName: "deploy.5"
       
-  - name: plv2-image3
+  - name: plv2-image3env
     type: image
     integration: cock1-hub
     pointer:
@@ -70,31 +56,15 @@ resources:
     seed:
       versionName: "nodeenv"
       
-  - name: plv2-imageentrypoint
+  - name: plv2-image4entrypoint
     type: image
     integration: cock1-hub
     pointer:
       sourceName: "scriptnull/debian"
     seed:
       versionName: "entrypoint"
-      
-  - name: plv2-imgdoesntexist
-    type: image
-    integration: cock1-hub
-    pointer:
-      sourceName: "shiphitchcock1/busybox"
-    seed:
-      versionName: "node"
-      
-  - name: plv2-imgtagdoestexists
-    type: image
-    integration: cock1-hub
-    pointer:
-      sourceName: "shiphitchcock1/betaci_nod_limitless_pl"
-    seed:
-      versionName: "test"
-      
-  - name: plv2-imagewithopts
+  
+  - name: plv2-image5workingdir
     type: image
     integration: cock1-hub
     pointer:
@@ -102,15 +72,7 @@ resources:
     seed:
       versionName: "driftking"
       
- # - name: plv2-image4
-  #  type: image
-   # integration: cock1-hub
-    #pointer:
-     # sourceName: "shiphitchcock1/betaci_nod_limitless_pl"
-    #seed:
-     # versionName: "deploy.5"
-
-  - name: plv2tp-dopts7
+  - name: plv2tp-dopts1
     type: dockerOptions
     version:
       memory: 128
@@ -129,27 +91,15 @@ resources:
         options:
           max-size: 50m
       privileged: true
-      #entryPoint:
-       # - '/bin/sh'
-       # - './entrypoint2.sh'
       labels:
         labelone: valueOne
         labeltwo: valueTwo
         
-  - name: plv2tp-dopts8
+  - name: plv2tp-dopts2
     type: dockerOptions
     version:
       memory: 128
-     # user: "driftking"
-     # workingDir: "/makemeworking"
       publishAllPorts: true
-      #cmd:
-       # - "node"
-        #- "job.js"
-      #dnsServers:
-       # - "127.0.8.1"
-      #dnsSearch:
-       # - "127.8.0.1"
       logConfig:
         type: "json-file"
         options:
@@ -158,30 +108,8 @@ resources:
       entryPoint:
         - '/bin/sh'
         - './entrypoint2.sh'
-
-  - name: plv2-dopts1
-    type: dockerOptions
-    version:
-      memory: 64
-      cpuShares: 8
-      portMappings:
-        - "80:80"
-        
-  - name: plv2-opts2
-    type: dockerOptions
-    version:
-      memory: 200
-      cpuShares: 16
-      
-  - name: plv2-invaliddopts3
-    type: dockerOptions
-    version:
-      memory: 200
-      cpuShares: 16
-      #links:
-       # - "sampletest-ecsdeploy2cef72c3-9d76-410b-861d-c2a8d4cb2886"
        
-  - name: plv2gke-dopts4
+  - name: plv2gke-dopts3
     type: dockerOptions
     version:
       memory: 64
@@ -193,7 +121,7 @@ resources:
         - "pwd"
         - "true"
       privileged: false
-      user: shiptest@shippable.com
+      user: driftking
       volumes:
         - "/host/path.2:/container/path:rw"
         - "/host/path:/container/path2:rw"
@@ -205,37 +133,7 @@ resources:
         labelone: valueOne
         labeltwo: valueTwo
       
-  - name: plv2-tpdopts
-    type: dockerOptions
-    version:
-      memory: 128
-      #Triton has standard values for memory 128,512 etc.
-      #If non standard values is given in the memory, it chooses the closest
-      #standard memory value. Triton also uses this value to choose the plan
-      #and cpu-shares
-      publishAllPorts : true
-      #publishAllPorts assigns a public ip to the container and gives endpoint
-      #for accessing the exposed ports.
-      
   - name: plv2ecs-dopts5
-    type: dockerOptions
-    version:
-      memory: 100
-      cpuShares: 0
-      links:
-        - "plv2upgrade-ecsdeploy81de65e0-beec-4cd6-969f-0529e7858392"
-      
-  - name: plv2-tpdopts1
-    type: dockerOptions
-    version:
-      memory: 200
-      #Triton has standard values for memory 128,512 etc.
-      #If non standard values is given in the memory, it chooses the closest
-      #standard memory value. Triton also uses this value to choose the plan
-      #and cpu-shares
-      publishAllPorts : false
-      
-  - name: plv2ecs-OtherDOpts
     type: dockerOptions
     #integration: varshaarun-ecs
     version:
@@ -245,7 +143,7 @@ resources:
        # - "sampletest-ecsdeploy2cef72c3-9d76-410b-861d-c2a8d4cb2886"
       cmd:
         - "pwd"
-        #- "true"
+        - "true"
       entryPoint:
         - "mongod"
       workingDir: "/home/test"
@@ -282,11 +180,6 @@ resources:
         labeltwo: valueTwo
       portMappings:
         - "80:80"
-        
-  - name: plv2ecs-dopts6
-    type: dockerOptions
-    version:
-      workingDir: "/home/test"
 
   - name: plv2-params1
     type: params
@@ -304,11 +197,6 @@ resources:
         DB_USERNAME: "aye0aye"
         DB_PASSWORD: "aye0aye"
         ENVIRONMENT: "test-aws"
-
-  - name: plv2-scale1
-    type: replicas
-    version:
-      count: 1
       
   - name: plv2-scale2
     type: replicas
@@ -323,7 +211,7 @@ resources:
   - name: plv2-version
     type: version
     seed:
-      versionName: "1.1.1-beta"
+      versionName: "1.2.3-beta"
 
   #- name: infra-repo
    # type: gitRepo
