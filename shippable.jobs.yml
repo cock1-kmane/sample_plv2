@@ -57,6 +57,12 @@ jobs:
       - IN: plv2-params2
       - IN: triggerv2sp7
       
+  - name: plv2-manifest8redis
+    type: manifest
+    steps:
+      - IN: plv2-image5redis
+      - IN: triggerv2sp8
+      
   - name: release-version1
     type: release
     steps:
@@ -130,3 +136,9 @@ jobs:
       - IN: tripub-cluster
       - TASK: managed
         deployMethod: blueGreen
+        
+  - name: plv2redis-tpdeploy4
+    type: tripubDeploy
+    steps:
+      - IN: plv2-manifest8redis
+      - IN: tripub-cluster      
