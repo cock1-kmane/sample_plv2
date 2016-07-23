@@ -120,7 +120,7 @@ jobs:
     type: tripubDeploy
     steps:
       - IN: plv2-manifest5entrypointdopt
-      - IN: plv2tp-dopts3
+      - IN: plv2tp-dopts4
       - IN: tripub-cluster
       
   - name: plv2multimf-tripubdeploy2
