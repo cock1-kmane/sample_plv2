@@ -36,6 +36,27 @@ jobs:
       - IN: plv2-image2
       - IN: triggerv2sp4
       
+  - name: plv2-manifest5entrypointdopt
+    type: manifest
+    steps:
+      - IN: plv2-image4entrypoint
+      - IN: plv2tp-dopts2
+      - IN: triggerv2sp4
+      
+  - name: plv2-manifest6workingdopt
+    type: manifest
+    steps:
+      - IN: plv2-image5workingdir
+      - IN: plv2tp-dopts1
+      - IN: triggerv2sp4
+      
+  - name: plv2-manifest7envvar
+    type: manifest
+    steps:
+      - IN: plv2-image3env
+      - IN: plv2-params2
+      - IN: triggerv2sp4
+      
   - name: release-version1
     type: release
     steps:
@@ -74,7 +95,7 @@ jobs:
     steps:
       - IN: plv2-manifest2
       - IN: tripub-cluster
-        
+      
   - name: plv2multimf-tripubdeploy2
     type: tripubDeploy
     steps:
