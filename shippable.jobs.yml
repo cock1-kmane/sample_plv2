@@ -41,21 +41,21 @@ jobs:
     steps:
       - IN: plv2-image4entrypoint
       - IN: plv2tp-dopts2
-      - IN: triggerv2sp4
+      - IN: triggerv2sp5
       
   - name: plv2-manifest6workingdirdopt
     type: manifest
     steps:
       - IN: plv2-image5workingdir
       - IN: plv2tp-dopts1
-      - IN: triggerv2sp4
+      - IN: triggerv2sp6
       
   - name: plv2-manifest7envvar
     type: manifest
     steps:
       - IN: plv2-image3env
       - IN: plv2-params2
-      - IN: triggerv2sp4
+      - IN: triggerv2sp7
       
   - name: release-version1
     type: release
