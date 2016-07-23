@@ -43,7 +43,7 @@ jobs:
       - IN: plv2tp-dopts2
       - IN: triggerv2sp4
       
-  - name: plv2-manifest6workingdopt
+  - name: plv2-manifest6workingdirdopt
     type: manifest
     steps:
       - IN: plv2-image5workingdir
@@ -78,34 +78,52 @@ jobs:
       - IN: plv2-manifest2
       - IN: dcl-cluster
 
-  - name: plv2-ecsdeploy
+  - name: plv2-ecsdeploybg
     type: ecsDeploy
     steps:
       - IN: plv2-manifest2
+      - IN: plv2ecs-dopts5
       - IN: ecs-cluster
-
-  - name: plv2-gkedeploy
-    type: gkeDeploy
+      
+  - name: plv2-ecsdeployup
+    type: ecsDeploy
     steps:
       - IN: plv2-manifest2
+      - IN: plv2ecs-dopts5
+      - IN: ecs-cluster
+      - TASK: managed
+        deployMethod: upgrade
+
+  - name: plv2-gkedeploybg
+    type: gkeDeploy
+    steps:
+      - IN: plv2-manifest6workingdirdopt
+      - IN: plv2gke-dopts3
       - IN: gke-cluster
+      
+  - name: plv2-gkedeployup
+    type: gkeDeploy
+    steps:
+      - IN: plv2-manifest6workingdirdopt
+      - IN: plv2gke-dopts3
+      - IN: gke-cluster
+      - TASK: managed
+        deployMethod: upgrade
 
   - name: plv2-tripubdeploy
     type: tripubDeploy
     steps:
-      - IN: plv2-manifest2
+      - IN: plv2-manifest5entrypointdopt
       - IN: tripub-cluster
       
   - name: plv2multimf-tripubdeploy2
     type: tripubDeploy
     steps:
       - IN: plv2-manifest2
-      - IN: plv2-manifest4
+      - IN: plv2-manifest6workingdirdopt
       - IN: tripub-cluster
-      - TASK: managed
-        deployMethod: upgrade
         
-  - name: plv2mftomf-tripubdeploy2
+  - name: plv2mftomf-tripubdeploy3
     type: tripubDeploy
     steps:
       - IN: plv2-mftomf3
