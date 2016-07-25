@@ -175,9 +175,9 @@ resources:
       cmd:
         - "pwd"
         - "true"
-      entryPoint:
-        - "mongod"
-      workingDir: "/home/test"
+     # entryPoint:
+       # - "mongod"
+      #workingDir: "/home/test"
       privileged: false
       user: testuser
       volumes:
