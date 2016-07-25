@@ -177,7 +177,7 @@ resources:
         - "true"
      # entryPoint:
        # - "mongod"
-      workingDir: "/home/test"
+      #workingDir: "/home/test"
       privileged: false
       user: testuser
       volumes:
@@ -220,6 +220,23 @@ resources:
         - "plv2-image2"
       volumesFrom:
         - "plv2-image2:ro"
+        
+  - name: plv2ecs-dopts2
+    type: dockerOptions
+    version:
+      logConfig:
+        type: "json-file"
+        options:
+          max-size: 50m
+      entryPoint:
+        - '/bin/sh'
+        - './entrypoint2.sh'
+        
+  - name: plv2ecs-dopts3
+    type: dockerOptions
+    version:
+      user: "driftking"
+      workingDir: "/makemeworking"
     
   - name: plv2-params1
     type: params
