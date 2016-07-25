@@ -175,10 +175,10 @@ resources:
       cmd:
         - "pwd"
         - "true"
-      entryPoint:
-        - "mongod"
+      #entryPoint:
+       # - "mongod"
       #workingDir: "/home/test"
-      privileged: false
+      #privileged: false
       #user: testuser
       volumes:
         - "/host/path.2:/container/path:rw"
