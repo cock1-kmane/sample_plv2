@@ -5,9 +5,9 @@ jobs:
       - IN: plv2-image1
       - IN: plv2-image2
      # - IN: plv2-image3env
-      #- IN: plv2-params1
-       # applyTo:
-        #  - plv2-image3env
+      - IN: plv2ecs-dopts1
+        applyTo:
+          - plv2-image1
       - IN: triggerv2sp1
     #on_success:
      # - echo 'this is on_success step of dv-man of type manifest'
