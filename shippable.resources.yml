@@ -122,6 +122,23 @@ resources:
     version:
       links:
         - "plv2-manifest8redis_0_0_055d5014-109c-4c84-9bbe-3009a523972f:testenv"
+        
+  - name: plv2tp-dopts4
+    type: dockerOptions
+    version:
+      volumes:
+        - "s1"
+        - "s2"
+        - "s3"
+        - "s4"
+        - "s5"
+        
+  - name: plv2tp-dopts5
+    type: dockerOptions
+    version:
+        volumesFrom:
+          - "plv2-manifest5entrypointdopt_0_0_03c3505a-a99b-46a9-8fd6-7f4d2516abb5"
+          - "basedataContainer:ro"
        
   - name: plv2gke-dopts3
     type: dockerOptions
@@ -147,22 +164,34 @@ resources:
         labelone: valueOne
         labeltwo: valueTwo
         
-  - name: plv2tp-dopts4
+  - name: plv2ecs-dopts1
     type: dockerOptions
+    #integration: varshaarun-ecs
     version:
-      volumes:
-        - "s1"
-        - "s2"
-        - "s3"
-        - "s4"
-        - "s5"
+      links:
+        - "plv2-image2"
+      volumesFrom:
+        - "plv2-image2:ro"
         
-  - name: plv2tp-dopts5
+  - name: plv2ecs-dopts2
     type: dockerOptions
     version:
-        volumesFrom:
-          - "plv2-manifest5entrypointdopt_0_0_03c3505a-a99b-46a9-8fd6-7f4d2516abb5"
-          - "basedataContainer:ro"
+      logConfig:
+        type: "json-file"
+        options:
+          max-size: 50m
+      entryPoint:
+        - '/bin/sh'
+        - './entrypoint2.sh'
+        
+  - name: plv2ecs-dopts3
+    type: dockerOptions
+    version:
+      user: "driftking"
+      workingDir: "/makemeworking"
+      cmd:
+        - "node"
+        - "job.js"
       
   - name: plv2ecs-dopts5
     type: dockerOptions
@@ -198,35 +227,6 @@ resources:
         labeltwo: valueTwo
       portMappings:
         - "80:80"
-       
-  - name: plv2ecs-dopts1
-    type: dockerOptions
-    #integration: varshaarun-ecs
-    version:
-      links:
-        - "plv2-image2"
-      volumesFrom:
-        - "plv2-image2:ro"
-        
-  - name: plv2ecs-dopts2
-    type: dockerOptions
-    version:
-      logConfig:
-        type: "json-file"
-        options:
-          max-size: 50m
-      entryPoint:
-        - '/bin/sh'
-        - './entrypoint2.sh'
-        
-  - name: plv2ecs-dopts3
-    type: dockerOptions
-    version:
-      user: "driftking"
-      workingDir: "/makemeworking"
-      cmd:
-        - "node"
-        - "job.js"
     
   - name: plv2-params1
     type: params
