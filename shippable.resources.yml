@@ -219,7 +219,7 @@ resources:
       links:
         - "plv2-image2"
       volumesFrom:
-        - "plv2-image2"
+        - "plv2-image2:ro"
     
   - name: plv2-params1
     type: params
