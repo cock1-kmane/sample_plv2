@@ -211,7 +211,14 @@ resources:
         labeltwo: valueTwo
       #portMappings:
        # - "80:80"
-
+       
+  - name: plv2ecs-dopts1
+    type: dockerOptions
+    #integration: varshaarun-ecs
+    version:
+      links:
+        - "plv2multiimg-mf1"
+    
   - name: plv2-params1
     type: params
     version:
