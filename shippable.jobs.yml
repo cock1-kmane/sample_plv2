@@ -8,7 +8,7 @@ jobs:
       - IN: plv2-image3env
       - IN: plv2-params1
         applyTo:
-          - plv2-image3
+          - plv2-image3env
       - IN: triggerv2sp1
     #on_success:
      # - echo 'this is on_success step of dv-man of type manifest'
@@ -103,6 +103,14 @@ jobs:
     steps:
       - IN: plv2-manifest2
       - IN: plv2ecs-dopts5
+      - IN: ecs-cluster
+      - TASK: managed
+        deployMethod: upgrade
+        
+  - name: plv2-ecsdeployup2
+    type: ecsDeploy
+    steps:
+      - IN: plv2multiimg-mf1
       - IN: ecs-cluster
       - TASK: managed
         deployMethod: upgrade
