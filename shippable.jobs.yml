@@ -126,6 +126,12 @@ jobs:
     steps:
       - IN: plv2ecs-manifest3
       - IN: ecs-cluster
+      
+  - name: plv2-ecsdeploybg3
+    type: ecsDeploy
+    steps:
+      - IN: plv2ecs-manifest3
+      - IN: ecs-cluster
 
   - name: plv2-gkedeploybg
     type: gkeDeploy
