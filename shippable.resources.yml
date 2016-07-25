@@ -209,8 +209,8 @@ resources:
       labels:
         labelone: valueOne
         labeltwo: valueTwo
-      portMappings:
-        - "80:80"
+      #portMappings:
+       # - "80:80"
        
   - name: plv2ecs-dopts1
     type: dockerOptions
