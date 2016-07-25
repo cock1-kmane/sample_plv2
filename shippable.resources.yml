@@ -180,7 +180,7 @@ resources:
       workingDir: "/home/test"
       privileged: false
       user: testuser
-     # volumes:
+      volumes:
       #  - "/host/path.2:/container/path:rw"
        # - "/host/path:/container/path2:rw"
         - "/host/path2:/container/path3:ro"
