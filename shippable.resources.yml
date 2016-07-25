@@ -217,7 +217,7 @@ resources:
     #integration: varshaarun-ecs
     version:
       links:
-        - "plv2multiimg-mf1"
+        - "plv2-image2"
     
   - name: plv2-params1
     type: params
