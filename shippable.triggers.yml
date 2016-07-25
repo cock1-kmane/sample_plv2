@@ -12,7 +12,7 @@ triggers:
    - name: triggerv2sp3
      type: trigger
      version:
-       counter: 9
+       counter: 10
        
    - name: triggerv2sp4
      type: trigger
