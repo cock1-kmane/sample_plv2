@@ -121,11 +121,19 @@ jobs:
       - TASK: managed
         deployMethod: upgrade
         
-  #- name: plv2-ecsdeploybg2
-   # type: ecsDeploy
-    #steps:
-     # - IN: plv2ecs-manifest3
-      #- IN: ecs-cluster
+  - name: plv2-ecsdeploybgentrypoint
+    type: ecsDeploy
+    steps:
+      - IN: plv2-manifest5entrypointdopt
+      - IN: plv2ecs-dopts2
+      - IN: ecs-cluster
+      
+  - name: plv2-ecsdeploybgworkingdir
+    type: ecsDeploy
+    steps:
+      - IN: plv2-manifest6workingdirdopt
+      - IN: plv2ecs-dopts3
+      - IN: ecs-cluster
       
   - name: plv2-ecsdeploybg3
     type: ecsDeploy
