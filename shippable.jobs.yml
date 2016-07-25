@@ -35,6 +35,13 @@ jobs:
       - IN: plv2-image2
       - IN: triggerv2sp4
       
+  - name: plv2ecs-manifest3
+    type: manifest
+    steps:
+      - IN: plv2-image2
+      - IN: plv2ecs-dopts5
+      - IN: triggerv2sp3
+      
   - name: plv2-manifest5entrypointdopt
     type: manifest
     steps:
@@ -113,6 +120,12 @@ jobs:
       - IN: ecs-cluster
       - TASK: managed
         deployMethod: upgrade
+        
+  - name: plv2-ecsdeploybg2
+    type: ecsDeploy
+    steps:
+      - IN: plv2ecs-manifest3
+      - IN: ecs-cluster
 
   - name: plv2-gkedeploybg
     type: gkeDeploy
