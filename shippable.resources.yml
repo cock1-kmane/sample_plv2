@@ -195,10 +195,10 @@ resources:
       #dnsSearch:
        # - "127.0.0.1"
         #- "8.8.8.8"
-      logConfig:
-        type: "json-file"
-        options:
-          test: test
+     # logConfig:
+      #  type: "json-file"
+       # options:
+        #  test: test
       ulimits:
         - name: cpu
           hard: 5
