@@ -177,7 +177,7 @@ resources:
         - "true"
       entryPoint:
         - "mongod"
-      workingDir: "/home/test"
+      #workingDir: "/home/test"
       privileged: false
       user: testuser
       volumes:
