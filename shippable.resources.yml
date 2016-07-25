@@ -166,7 +166,6 @@ resources:
       
   - name: plv2ecs-dopts5
     type: dockerOptions
-    #integration: varshaarun-ecs
     version:
       memory: 48
       cpuShares: 2
@@ -197,8 +196,8 @@ resources:
       labels:
         labelone: valueOne
         labeltwo: valueTwo
-      #portMappings:
-       # - "80:80"
+      portMappings:
+        - "80:80"
        
   - name: plv2ecs-dopts1
     type: dockerOptions
@@ -225,6 +224,9 @@ resources:
     version:
       user: "driftking"
       workingDir: "/makemeworking"
+      cmd:
+        - "node"
+        - "job.js"
     
   - name: plv2-params1
     type: params
