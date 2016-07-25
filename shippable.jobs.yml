@@ -3,12 +3,11 @@ jobs:
     type: manifest
     steps:
       - IN: plv2-image1
-        pull: false
       - IN: plv2-image2
-      - IN: plv2-image3env
-      - IN: plv2-params1
-        applyTo:
-          - plv2-image3env
+     # - IN: plv2-image3env
+      #- IN: plv2-params1
+       # applyTo:
+        #  - plv2-image3env
       - IN: triggerv2sp1
     #on_success:
      # - echo 'this is on_success step of dv-man of type manifest'
