@@ -211,6 +211,7 @@ jobs:
     type: deploy
     steps:
       - IN: ed-manifest10newgke
+      - IN: edgke-dopts3
       - IN: ed-gkecluster
       - TASK: managed
         deployMethod: upgrade
