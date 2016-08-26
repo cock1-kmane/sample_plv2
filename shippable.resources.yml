@@ -102,9 +102,7 @@ resources:
       labels:
         labelone: valueOne
         labeltwo: valueTwo
-      readOnlyRootFilesystem : true
-      network : "bridge"
-        
+      
   - name: ed-dopts2
     type: dockerOptions
     version:
@@ -200,8 +198,8 @@ resources:
   - name: edecs-dopts5
     type: dockerOptions
     version:
-      memory: 48
-      cpuShares: 2
+      memory: 100
+      cpuShares: 1
       #cmd:
        # - "pwd"
         #- "true"
@@ -231,6 +229,8 @@ resources:
         labeltwo: valueTwo
       portMappings:
         - "80:80"
+      readOnlyRootFilesystem : true
+      network : "bridge"
     
   - name: ed-params1
     type: params
