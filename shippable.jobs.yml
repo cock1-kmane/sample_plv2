@@ -194,23 +194,29 @@ jobs:
 
 #NEW
 
-  - name: ed-manifest10newgke
+  - name: ed-manifest11newgke
     type: manifest
     steps:
       - IN: ed-image1
-      - IN: ed-tr10
+      - IN: ed-tr1
+      
+  - name: ed-manifest2driftking
+    type: manifest
+    steps:
+      - IN: ed-image5workingdir
+      - IN: ed-tr2
       
   - name: ed-gkedeploybg
     type: deploy
     steps:
-      - IN: ed-manifest10newgke
+      - IN: ed-manifest1newgke
       - IN: edgke-dopts3
       - IN: ed-gkecluster
       
   - name: ed-gkedeployup
     type: deploy
     steps:
-      - IN: ed-manifest10newgke
+      - IN: ed-manifest1newgke
       - IN: edgke-dopts3
       - IN: ed-gkecluster
       - TASK: managed
