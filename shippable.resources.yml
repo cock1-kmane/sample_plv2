@@ -102,6 +102,8 @@ resources:
       labels:
         labelone: valueOne
         labeltwo: valueTwo
+      readOnlyRootFilesystem : true
+      network : "bridge"
         
   - name: ed-dopts2
     type: dockerOptions
