@@ -163,6 +163,8 @@ resources:
       labels:
         labelone: valueOne
         labeltwo: valueTwo
+      readOnlyRootFilesystem : true
+      network : "bridge"
         
   - name: edecs-dopts1
     type: dockerOptions
