@@ -1,70 +1,70 @@
 triggers:
-   - name: triggerv2sp1
-     type: trigger
-     version:
-       counter: 6
-       
-   - name: triggerv2sp2
-     type: trigger
-     version:
-       counter: 2
-       
-   - name: triggerv2sp3
-     type: trigger
-     version:
-       counter: 19
-       
-   - name: triggerv2sp4
-     type: trigger
-     version:
-       counter: 16
-       
-   - name: triggerv2sp5
-     type: trigger
-     version:
-       counter: 4
-       
-   - name: triggerv2sp6
-     type: trigger
-     version:
-       counter: 4
-       
-   - name: triggerv2sp7
-     type: trigger
-     version:
-       counter: 9
-       
-   - name: triggerv2sp8
-     type: trigger
-     version:
-       counter: 1
-       
-   - name: triggerv2sp9
-     type: trigger
-     version:
-       counter: 1
-       
-   - name: triggerv2sp10
+   - name: ed-tr1
      type: trigger
      version:
        counter: 0
        
-   - name: triggerv2sp11
+   - name: ed-tr2
      type: trigger
      version:
        counter: 0
        
-   - name: triggerv2sp12
+   - name: ed-tr3
      type: trigger
      version:
        counter: 0
        
-   - name: triggerv2sp13
+   - name: ed-tr4
      type: trigger
      version:
        counter: 0
        
-   - name: triggerv2sp14
+   - name: ed-tr5
      type: trigger
      version:
-       counter: 1
+       counter: 0
+       
+   - name: ed-tr6
+     type: trigger
+     version:
+       counter: 0
+       
+   - name: ed-tr7
+     type: trigger
+     version:
+       counter: 0
+       
+   - name: ed-tr8
+     type: trigger
+     version:
+       counter: 0
+       
+   - name: ed-tr9
+     type: trigger
+     version:
+       counter: 0
+       
+   - name: ed-tr10
+     type: trigger
+     version:
+       counter: 0
+       
+   - name: ed-tr11
+     type: trigger
+     version:
+       counter: 0
+       
+   - name: ed-tr12
+     type: trigger
+     version:
+       counter: 0
+       
+   - name: ed-tr13
+     type: trigger
+     version:
+       counter: 0
+       
+   - name: ed-tr14
+     type: trigger
+     version:
+       counter: 0
