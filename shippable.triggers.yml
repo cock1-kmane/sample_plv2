@@ -44,6 +44,26 @@ triggers:
      version:
        counter: 1
        
+   - name: triggerv2sp10
+     type: trigger
+     version:
+       counter: 0
+       
+   - name: triggerv2sp11
+     type: trigger
+     version:
+       counter: 0
+       
+   - name: triggerv2sp12
+     type: trigger
+     version:
+       counter: 0
+       
+   - name: triggerv2sp13
+     type: trigger
+     version:
+       counter: 0
+       
    - name: triggerv2sp14
      type: trigger
      version:
