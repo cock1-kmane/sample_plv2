@@ -201,13 +201,13 @@ jobs:
       - IN: ed-tr10
       
   - name: ed-gkedeploybg
-    type: gkeDeploy
+    type: deploy
     steps:
       - IN: ed-manifest10newgke
       - IN: ed-gkecluster
       
   - name: ed-gkedeployup
-    type: gkeDeploy
+    type: deploy
     steps:
       - IN: ed-manifest10newgke
       - IN: ed-gkecluster
