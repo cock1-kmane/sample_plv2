@@ -1,40 +1,40 @@
 resources:
   - name: ddc-cluster
     type: cluster
-    integration: varshaarun-ddc
+    integration: plv2-ddc
     pointer:
       sourceName : "nothing" #we can anything because it is mandatory but ddc doesnot have clusters
 
   - name: dcl-cluster
     type: cluster
-    integration: varshaarun-dcl
+    integration: plv2-dcl
     pointer:
      sourceName : "cluster-dcl"
 
   - name: ecs-cluster
     type: cluster
-    integration: varshaarun-ecs
+    integration: plv2-ecs
     pointer:
       sourceName : "testCL"
       region: "us-west-2"
       
   - name: gke-cluster
     type: cluster
-    integration: varshaarun-gke
+    integration: plv2-gke
     pointer:
       sourceName: "small-cluster" #name of the cluster we are deploying.
       region: "us-east1-d"
       
   - name: tripub-cluster
     type: cluster
-    integration: varshaarun-tripub
+    integration: plv2-tripub
     pointer:
       sourceName: "default" # we can give anything it deploy instances based on region not by cluster name
       region: "us-east-2"
 
   - name: plv2-image1
     type: image
-    integration: cock1-hub
+    integration: plv2-docker
     pointer:
       sourceName: "shiphitchcock1/betaci_nod_limitless_pl"
     seed:
@@ -42,7 +42,7 @@ resources:
       
   - name: plv2-image2
     type: image
-    integration: cock1-hub
+    integration: plv2-docker
     pointer:
       sourceName: "shiphitchcock1/betaci_nod_limitless_pl"
     seed:
@@ -50,7 +50,7 @@ resources:
       
   - name: plv2-image3env
     type: image
-    integration: cock1-hub
+    integration: plv2-docker
     pointer:
       sourceName: "scriptnull/busybox"
     seed:
@@ -58,7 +58,7 @@ resources:
       
   - name: plv2-image4entrypoint
     type: image
-    integration: cock1-hub
+    integration: plv2-docker
     pointer:
       sourceName: "scriptnull/debian"
     seed:
@@ -66,7 +66,7 @@ resources:
   
   - name: plv2-image5workingdir
     type: image
-    integration: cock1-hub
+    integration: plv2-docker
     pointer:
       sourceName: "scriptnull/debian"
     seed:
@@ -74,7 +74,7 @@ resources:
       
   - name: plv2-image5redis
     type: image
-    integration: cock1-hub
+    integration: plv2-docker
     pointer:
       sourceName: "redis"
     seed:
