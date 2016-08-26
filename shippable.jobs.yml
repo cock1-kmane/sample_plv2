@@ -194,7 +194,7 @@ jobs:
 
 #NEW
 
-  - name: ed-manifest11newgke
+  - name: ed-manifest1newgke
     type: manifest
     steps:
       - IN: ed-image1
@@ -225,14 +225,14 @@ jobs:
   - name: ed-ecsdeploybg
     type: deploy
     steps:
-      - IN: ed-manifest1newgke
+      - IN: ed-manifest2driftking
       - IN: edecs-dopts5
       - IN: ed-ecscluster
       
   - name: ed-ecsdeployup
     type: deploy
     steps:
-      - IN: ed-manifest1newgke
+      - IN: ed-manifest2driftking
       - IN: edecs-dopts5
       - IN: ed-ecscluster
       - TASK: managed
