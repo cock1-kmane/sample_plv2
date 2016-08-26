@@ -194,22 +194,22 @@ jobs:
 
 #NEW
 
-  - name: plv2-manifest10newgke
+  - name: ed-manifest10newgke
     type: manifest
     steps:
-      - IN: plv2-image1
-      - IN: triggerv2sp10
+      - IN: ed-image1
+      - IN: ed-tr10
       
-  - name: plv2-gkedeploybg
+  - name: ed-gkedeploybg
     type: gkeDeploy
     steps:
-      - IN: plv2-manifest10newgke
-      - IN: gke-cluster
+      - IN: ed-manifest10newgke
+      - IN: ed-gkecluster
       
-  - name: plv2-gkedeployup
+  - name: ed-gkedeployup
     type: gkeDeploy
     steps:
-      - IN: plv2-manifest10newgke
-      - IN: gke-cluster
+      - IN: ed-manifest10newgke
+      - IN: ed-gkecluster
       - TASK: managed
         deployMethod: upgrade
