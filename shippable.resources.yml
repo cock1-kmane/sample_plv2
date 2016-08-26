@@ -1,38 +1,38 @@
 resources:
-  - name: ddc-cluster
+  - name: ed-ddccluster
     type: cluster
     integration: plv2-ddc
     pointer:
       sourceName : "nothing" #we can anything because it is mandatory but ddc doesnot have clusters
 
-  - name: dcl-cluster
+  - name: ed-dclcluster
     type: cluster
     integration: plv2-dcl
     pointer:
      sourceName : "cluster-dcl"
 
-  - name: ecs-cluster
+  - name: ed-ecscluster
     type: cluster
     integration: plv2-ecs
     pointer:
       sourceName : "testCL"
       region: "us-west-2"
       
-  - name: gke-cluster
+  - name: ed-gkecluster
     type: cluster
     integration: plv2-gke
     pointer:
       sourceName: "small-cluster" #name of the cluster we are deploying.
       region: "us-east1-d"
       
-  - name: tripub-cluster
+  - name: ed-tripubcluster
     type: cluster
     integration: plv2-tripub
     pointer:
       sourceName: "default" # we can give anything it deploy instances based on region not by cluster name
       region: "us-east-2"
 
-  - name: plv2-image1
+  - name: ed-image1
     type: image
     integration: plv2-docker
     pointer:
@@ -40,7 +40,7 @@ resources:
     seed:
       versionName: "deploy.4"
       
-  - name: plv2-image2
+  - name: ed-image2
     type: image
     integration: plv2-docker
     pointer:
@@ -48,7 +48,7 @@ resources:
     seed:
       versionName: "deploy.5"
       
-  - name: plv2-image3env
+  - name: ed-image3env
     type: image
     integration: plv2-docker
     pointer:
@@ -56,7 +56,7 @@ resources:
     seed:
       versionName: "nodeenv"
       
-  - name: plv2-image4entrypoint
+  - name: ed-image4entrypoint
     type: image
     integration: plv2-docker
     pointer:
@@ -64,7 +64,7 @@ resources:
     seed:
       versionName: "entrypoint"
   
-  - name: plv2-image5workingdir
+  - name: ed-image5workingdir
     type: image
     integration: plv2-docker
     pointer:
@@ -72,7 +72,7 @@ resources:
     seed:
       versionName: "driftking"
       
-  - name: plv2-image5redis
+  - name: ed-image5redis
     type: image
     integration: plv2-docker
     pointer:
@@ -80,7 +80,7 @@ resources:
     seed:
       versionName: "latest"
       
-  - name: plv2tp-dopts1
+  - name: ed-dopts1
     type: dockerOptions
     version:
       memory: 128
@@ -103,7 +103,7 @@ resources:
         labelone: valueOne
         labeltwo: valueTwo
         
-  - name: plv2tp-dopts2
+  - name: ed-dopts2
     type: dockerOptions
     version:
       memory: 128
@@ -117,13 +117,13 @@ resources:
         - '/bin/sh'
         - './entrypoint2.sh'
         
-  - name: plv2tp-dopts3
+  - name: edtp-dopts3
     type: dockerOptions
     version:
       links:
         - "plv2-manifest8redis_0_0_055d5014-109c-4c84-9bbe-3009a523972f:testenv"
         
-  - name: plv2tp-dopts4
+  - name: edtp-dopts4
     type: dockerOptions
     version:
       volumes:
@@ -133,14 +133,14 @@ resources:
         - "s4"
         - "s5"
         
-  - name: plv2tp-dopts5
+  - name: edtp-dopts5
     type: dockerOptions
     version:
         volumesFrom:
           - "plv2-manifest5entrypointdopt_0_0_03c3505a-a99b-46a9-8fd6-7f4d2516abb5"
           - "basedataContainer:ro"
        
-  - name: plv2gke-dopts3
+  - name: edgke-dopts3
     type: dockerOptions
     version:
       memory: 64
@@ -164,7 +164,7 @@ resources:
         labelone: valueOne
         labeltwo: valueTwo
         
-  - name: plv2ecs-dopts1
+  - name: edecs-dopts1
     type: dockerOptions
     #integration: varshaarun-ecs
     version:
@@ -173,7 +173,7 @@ resources:
       volumesFrom:
         - "plv2-image2:ro"
         
-  - name: plv2ecs-dopts2
+  - name: edecs-dopts2
     type: dockerOptions
     version:
       logConfig:
@@ -184,7 +184,7 @@ resources:
         - '/bin/sh'
         - './entrypoint2.sh'
         
-  - name: plv2ecs-dopts3
+  - name: edecs-dopts3
     type: dockerOptions
     version:
       user: "driftking"
@@ -193,7 +193,7 @@ resources:
         - "node"
         - "job.js"
       
-  - name: plv2ecs-dopts5
+  - name: edecs-dopts5
     type: dockerOptions
     version:
       memory: 48
@@ -228,13 +228,13 @@ resources:
       portMappings:
         - "80:80"
     
-  - name: plv2-params1
+  - name: ed-params1
     type: params
     version:
       params:
         MONGO_API_URL: "localhost:28017"
 
-  - name: plv2-params2
+  - name: ed-params2
     type: params
     version:
       params:
@@ -245,17 +245,17 @@ resources:
         DB_PASSWORD: "aye0aye"
         ENVIRONMENT: "test-aws"
       
-  - name: plv2-scale2
+  - name: ed-scale2
     type: replicas
     version:
       count: 2
 
-  - name: plv2-scale3
+  - name: ed-scale3
     type: replicas
     version:
       count: 3
   
-  - name: plv2-version
+  - name: ed-version
     type: version
     seed:
       versionName: "1.2.3-beta"
