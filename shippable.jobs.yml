@@ -221,3 +221,19 @@ jobs:
       - IN: ed-gkecluster
       - TASK: managed
         deployMethod: upgrade
+        
+  - name: ed-ecsdeploybg
+    type: deploy
+    steps:
+      - IN: ed-manifest1newgke
+      - IN: edecs-dopts5
+      - IN: ed-ecscluster
+      
+  - name: ed-ecsdeployup
+    type: deploy
+    steps:
+      - IN: ed-manifest1newgke
+      - IN: edecs-dopts5
+      - IN: ed-ecscluster
+      - TASK: managed
+        deployMethod: upgrade
