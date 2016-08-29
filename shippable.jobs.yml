@@ -204,6 +204,7 @@ jobs:
     type: manifest
     steps:
       - IN: ed-image5workingdir
+      - IN: ed-image6
       - IN: ed-tr2
       
   - name: ed-manifest3mftomf
@@ -232,6 +233,7 @@ jobs:
     type: deploy
     steps:
       - IN: ed-manifest2driftking
+        switch:off
       - IN: edecs-dopts6
       - IN: ed-ecscluster
       
@@ -239,6 +241,7 @@ jobs:
     type: deploy
     steps:
       - IN: ed-manifest2driftking
+        switch: off
       - IN: edecs-dopts6
       - IN: ed-ecscluster
       - TASK: managed
