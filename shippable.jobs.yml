@@ -206,6 +206,12 @@ jobs:
       - IN: ed-image5workingdir
       - IN: ed-tr2
       
+  - name: ed-manifest3mftomf
+    type: manifest
+    steps:
+      - IN: ed-manifest2driftking
+     # - IN: ed-image1
+      
   - name: ed-gkedeploybg
     type: deploy
     steps:
@@ -235,5 +241,14 @@ jobs:
       - IN: ed-manifest2driftking
       - IN: edecs-dopts6
       - IN: ed-ecscluster
+      - TASK: managed
+        deployMethod: upgrade
+        
+  - name: ed-tpdeployup
+    type: deploy
+    steps:
+      - IN: ed-manifest2driftking
+      - IN: ed-dopts
+      - IN: ed-tripubcluster
       - TASK: managed
         deployMethod: upgrade
