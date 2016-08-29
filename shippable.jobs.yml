@@ -233,7 +233,7 @@ jobs:
     type: deploy
     steps:
       - IN: ed-manifest2driftking
-        switch:off
+        switch: off
       - IN: edecs-dopts6
       - IN: ed-ecscluster
       
