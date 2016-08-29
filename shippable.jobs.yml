@@ -210,7 +210,7 @@ jobs:
     type: manifest
     steps:
       - IN: ed-manifest2driftking
-     # - IN: ed-image1
+      - IN: ed-image1
       
   - name: ed-gkedeploybg
     type: deploy
