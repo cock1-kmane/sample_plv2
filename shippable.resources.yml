@@ -80,6 +80,11 @@ resources:
     seed:
       versionName: "latest"
       
+  - name: ed-dopts
+    type: dockerOptions
+    version:
+      memory: 100
+      
   - name: ed-dopts1
     type: dockerOptions
     version:
