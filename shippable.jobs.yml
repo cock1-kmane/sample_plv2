@@ -226,14 +226,14 @@ jobs:
     type: deploy
     steps:
       - IN: ed-manifest2driftking
-      - IN: edecs-dopts5
+      - IN: edecs-dopts6
       - IN: ed-ecscluster
       
   - name: ed-ecsdeployup
     type: deploy
     steps:
       - IN: ed-manifest2driftking
-      - IN: edecs-dopts5
+      - IN: edecs-dopts6
       - IN: ed-ecscluster
       - TASK: managed
         deployMethod: upgrade
