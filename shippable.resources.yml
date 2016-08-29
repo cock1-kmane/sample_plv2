@@ -229,6 +229,10 @@ resources:
         labeltwo: valueTwo
       portMappings:
         - "80:80"
+        
+  - name: edecs-dopts6
+    type: dockerOptions
+    version:
       readOnlyRootFilesystem : true
       network : "bridge"
     
