@@ -80,6 +80,14 @@ resources:
     seed:
       versionName: "latest"
       
+  - name: ed-image6
+    type: image
+    integration: plv2-docker
+    pointer:
+      sourceName: "shippabledocker/pipelinev2"
+    seed:
+      versionName: "deploy.1"
+      
   - name: ed-dopts
     type: dockerOptions
     version:
