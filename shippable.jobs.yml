@@ -247,7 +247,7 @@ jobs:
   - name: ed-tpdeployup
     type: deploy
     steps:
-      - IN: ed-manifest2driftking
+      - IN: ed-manifest3mftomf
       - IN: ed-dopts
       - IN: ed-tripubcluster
       - TASK: managed
