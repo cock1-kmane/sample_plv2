@@ -247,11 +247,11 @@ jobs:
       - TASK: managed
         deployMethod: upgrade
         
-  - name: ed-tpdeployup
-    type: deploy
-    steps:
-      - IN: ed-manifest3mftomf
-      - IN: ed-dopts
-      - IN: ed-tripubcluster
-      - TASK: managed
-        deployMethod: upgrade
+  # - name: ed-tpdeployup
+  #   type: deploy
+  #   steps:
+  #     - IN: ed-manifest3mftomf
+  #     - IN: ed-dopts
+  #     - IN: ed-tripubcluster
+  #     - TASK: managed
+  #       deployMethod: upgrade
