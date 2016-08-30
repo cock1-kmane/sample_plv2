@@ -257,14 +257,14 @@ jobs:
     type: deploy
     steps:
       - IN: ed-manifest4dclddc
-      - IN: edecs-dopts
+      - IN: ed-dopts
       - IN: ed-dclcluster
       
   - name: ed-ddcdeploy
     type: deploy
     steps:
       - IN: ed-manifest4dclddc
-      - IN: edecs-dopts
+      - IN: ed-dopts
       - IN: ed-ddccluster
         
   # - name: ed-tpdeployup
