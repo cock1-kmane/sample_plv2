@@ -213,6 +213,12 @@ jobs:
       - IN: ed-manifest2driftking
       - IN: ed-image1
       
+  - name: ed-manifest4dclddc
+    type: manifest
+    steps:
+      - IN: ed-image6
+      - IN: ed-tr4
+      
   - name: ed-gkedeploybg
     type: deploy
     steps:
@@ -246,6 +252,20 @@ jobs:
       - IN: ed-ecscluster
       - TASK: managed
         deployMethod: upgrade
+        
+  - name: ed-dcldeploy
+    type: deploy
+    steps:
+      - IN: ed-manifest4dclddc
+      - IN: edecs-dopts
+      - IN: ed-dclcluster
+      
+  - name: ed-ddcdeploy
+    type: deploy
+    steps:
+      - IN: ed-manifest4dclddc
+      - IN: edecs-dopts
+      - IN: ed-ddccluster
         
   # - name: ed-tpdeployup
   #   type: deploy
