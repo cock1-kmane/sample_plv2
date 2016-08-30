@@ -253,19 +253,19 @@ jobs:
       - TASK: managed
         deployMethod: upgrade
         
-  - name: ed-dcldeploy
-    type: deploy
-    steps:
-      - IN: ed-manifest4dclddc
-      - IN: ed-dopts
-      - IN: ed-dclcluster
+  # - name: ed-dcldeploy
+  #   type: deploy
+  #   steps:
+  #     - IN: ed-manifest4dclddc
+  #     - IN: ed-dopts
+  #     - IN: ed-dclcluster
       
-  - name: ed-ddcdeploy
-    type: deploy
-    steps:
-      - IN: ed-manifest4dclddc
-      - IN: ed-dopts
-      - IN: ed-ddccluster
+  # - name: ed-ddcdeploy
+  #   type: deploy
+  #   steps:
+  #     - IN: ed-manifest4dclddc
+  #     - IN: ed-dopts
+  #     - IN: ed-ddccluster
         
   # - name: ed-tpdeployup
   #   type: deploy
